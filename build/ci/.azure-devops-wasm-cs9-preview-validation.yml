@@ -16,7 +16,7 @@ jobs:
     clean: true
     
   - bash: |
-      msbuild /r /p:Configuration=Release /p:LangVersion=preview /p:UnoUIUseRoslynSourceGenerators=true /p:MicrosoftNetCompilerVersionOverride=3.8.0-3.final  src/SamplesApp/SamplesApp.Wasm/SamplesApp.Wasm.csproj
+      msbuild /r /p:Configuration=Release /p:LangVersion=preview /p:UnoUIUseRoslynSourceGenerators=true /p:MicrosoftNetCompilerVersionOverride=3.8.0-3.final src/SamplesApp/SamplesApp.Wasm/SamplesApp.Wasm.csproj  /bl:$(build.artifactstagingdirectory)\build-cs9-preview-$(GitVersion.FullSemVer).binlog
 
     displayName: 'Build sample app'
 
